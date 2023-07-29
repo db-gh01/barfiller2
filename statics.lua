@@ -304,7 +304,7 @@ function analyze_points_table(tab)
 end
 
 function calc_new_width()
-    return math.floor((xp.current / xp.total) * settings.Images.Width)
+    return math.floor((xp.current / (xp.total-1)) * settings.Images.Width)
 end
 
 function hide()
