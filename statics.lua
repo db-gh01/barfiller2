@@ -317,7 +317,6 @@ end
 function show()
     background_image:show()
     foreground_image:show()
-    mog_house()
     exp_text:show()
     ready = true
 end

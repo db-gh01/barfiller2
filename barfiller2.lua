@@ -164,7 +164,6 @@ windower.register_event('incoming chunk', function(id, org, modi, is_injected, i
             background_image:show()
             foreground_image:show()
             exp_text:show()
-            mog_house()
         elseif id == ZONE_OUT_PACKET then
             is_hidden_by_zoning = true
             background_image:hide()
@@ -199,7 +198,6 @@ end)
 windower.register_event('zone change', function(new_id, old_id)
     update_strings()
     update_bar()
-    mog_house()
 end)
 
 windower.register_event('status change', function(new_status_id)
@@ -213,7 +211,6 @@ windower.register_event('status change', function(new_status_id)
         background_image:show()
         foreground_image:show()
         exp_text:show()
-        mog_house()
     end
 end)
 
@@ -230,7 +227,6 @@ windower.register_event('keyboard', function(dik, flags, blocked)
             background_image:show()
             foreground_image:show()
             exp_text:show()
-            mog_house()
         elseif dik == hideKey and flags == true and (is_hidden_by_key == false) and (is_hidden_by_cutscene == false) then
             is_hidden_by_key = true
             background_image:hide()
