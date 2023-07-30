@@ -308,6 +308,8 @@ function calc_new_width()
 end
 
 function hide()
+    frame_left_image:hide()
+    frame_right_image:hide()
     background_image:hide()
     foreground_image:hide()
     exp_text:hide()
@@ -315,6 +317,8 @@ function hide()
 end
 
 function show()
+    frame_left_image:show()
+    frame_right_image:show()
     background_image:show()
     foreground_image:show()
     exp_text:show()

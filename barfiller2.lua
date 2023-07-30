@@ -161,11 +161,15 @@ windower.register_event('incoming chunk', function(id, org, modi, is_injected, i
             end
         elseif id == LOGIN_ZONE_PACKET then
             is_hidden_by_zoning = false
+            frame_left_image:show()
+            frame_right_image:show()
             background_image:show()
             foreground_image:show()
             exp_text:show()
         elseif id == ZONE_OUT_PACKET then
             is_hidden_by_zoning = true
+            frame_left_image:hide()
+            frame_right_image:hide()
             background_image:hide()
             foreground_image:hide()
             exp_text:hide()
@@ -203,11 +207,15 @@ end)
 windower.register_event('status change', function(new_status_id)
     if is_hidden_by_cutscene == false and (new_status_id == 4) and (is_hidden_by_key == false) then
         is_hidden_by_cutscene = true
+        frame_left_image:hide()
+        frame_right_image:hide()
         background_image:hide()
         foreground_image:hide()
         exp_text:hide()
     elseif is_hidden_by_cutscene and new_status_id ~= 4 and (is_hidden_by_key == false) then
         is_hidden_by_cutscene = false
+        frame_left_image:show()
+        frame_right_image:show()
         background_image:show()
         foreground_image:show()
         exp_text:show()
@@ -224,11 +232,15 @@ windower.register_event('keyboard', function(dik, flags, blocked)
     if not is_hidden_by_zoning then
         if dik == hideKey and flags == true and (is_hidden_by_key == true) and (is_hidden_by_cutscene == false) then
             is_hidden_by_key = false
+            frame_left_image:show()
+            frame_right_image:show()
             background_image:show()
             foreground_image:show()
             exp_text:show()
         elseif dik == hideKey and flags == true and (is_hidden_by_key == false) and (is_hidden_by_cutscene == false) then
             is_hidden_by_key = true
+            frame_left_image:hide()
+            frame_right_image:hide()
             background_image:hide()
             foreground_image:hide()
             exp_text:hide()
